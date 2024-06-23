@@ -23,3 +23,10 @@ OWASP + PACT
 | 14 | Test for replay attacks                     | Ensure that the contract is resistant to replay attacks.                    |
 | 15 | Avoid using hardcoded secrets               | Ensure no hardcoded secrets or sensitive information are within the contract code.|
 | 16 | Cross-Function Reentrancy                   | Ensure no recursive call.                                                   |
+
+
+# Attacks
+
+* Re-entrancy attack: [https://hackernoon.com/hack-solidity-reentrancy-attack](https://www.certik.com/resources/blog/1eFmMTGVicfAMiPka3vaTY-cross-function-reentrancy-attacks-in-kadena-smart-contracts)
+
+
