@@ -1,5 +1,11 @@
-# Secruity-in-Pact
+# Security-in-Pact
 Aims to create a security concern and checklist for Pact
+
+# Gen key-pair account
+
+https://github.com/kadena-community/secure-keygen
+
+```dd if=/dev/urandom bs=32 count=1 | ./keygen keys```
 
 # Checklist
 
