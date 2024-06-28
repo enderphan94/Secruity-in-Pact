@@ -30,9 +30,68 @@ OWASP + PACT
 | 15 | Avoid using hardcoded secrets               | Ensure no hardcoded secrets or sensitive information are within the contract code.|
 | 16 | Cross-Function Reentrancy                   | Ensure no recursive call.                                                   |
 
+# Tools
+
+* Use chainweaver to see the overall functions of a contract: http://chainweaver.kadena.network
+* Use Cspell to check for spelling, typoes, etc..
 
 # Attacks
 
 * Re-entrancy attack: [https://hackernoon.com/hack-solidity-reentrancy-attack](https://www.certik.com/resources/blog/1eFmMTGVicfAMiPka3vaTY-cross-function-reentrancy-attacks-in-kadena-smart-contracts)
 
+# Functional tests
+
+Using REPL to implement and simulate the functional testing: https://docs.kadena.io/build/pact/atom-sdk
+
+```
+;; ========================================================
+;;                                       1-load-environment-data
+;; ========================================================
+ 
+"Loading loans.repl..."
+"Setting transaction keys"
+"Setting transaction data"
+""
+""
+;; ========================================================
+;;                                        2-load-pact-file
+;; ========================================================
+ 
+"Loading loans.pact..."
+"Keyset defined"
+"Loaded module \"loans\", hash \"552198d5bc3a6cf8e84919a1b0f8c5cc764f65455e8dc687e3b6680b225e2684801fbfd42d6c734f798e3e210a03d5c9d6100c74433e3e16428903c95292466e\""
+"TableCreated"
+"TableCreated"
+"TableCreated"
+""
+""
+""
+""
+;; ========================================================
+;;                                         3-call-functions
+;; ========================================================
+ 
+ 
+"Using \"loans\""
+"Write succeeded"
+"Write succeeded"
+"Write succeeded"
+"Write succeeded"
+""
+""
+""
+""
+ 
+;; ========================================================
+;;                                          4-read-loans
+;; ========================================================
+ 
+"Using \"loans\""
+[{"inventory-key": "loanId-1:Capital One", "balance": 40000} {"inventory-key": "loanId-1:buyer1", "balance": 6000} {"inventory-key": "loanId-1:buyer2", "balance": 2000} {"inventory-key": "loanId-1:buyer3", "balance": 2000}]
+[]
+[{"entityName": "Capital One", "loanAmount": 50000, "loanName": "loan1", "status": "assigned"}]
+""
+""
+ 
+```
 
